@@ -25,6 +25,9 @@ RUN apk update && \
 ##### Rails #####
 RUN gem install bundler
 
+COPY scripts/start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
 WORKDIR /tmp
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
@@ -35,4 +38,3 @@ ENV APP_HOME /myapp
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 COPY . $APP_HOME
-
