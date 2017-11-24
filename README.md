@@ -21,4 +21,12 @@
 1. Project Settings -> Project -> Project SDK -> Choose remote interpreter.
 1. Run/Debug Configurations
 1. `+` and `Rails`
+1. Check `Run browser` and `Start Javascript ...`
 1. In `Ruby SDK`, choose `Use other SDK` and docker-compose interpreter.
+
+## DB client setting
+- Host: `localhost`
+- Database: `myapp_development`
+- User: `root`
+- Password: `root_password`
+- Port: `6033`
