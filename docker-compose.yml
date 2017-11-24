@@ -7,9 +7,9 @@ services:
     volumes:
       - .:/myapp
     ports:
-      - "127.0.0.1:3000:3000"
-      - "127.0.0.1:1234:1234"
-      - "127.0.0.1:26162:26162"
+      - "3000:3000"
+      - "1234:1234"
+      - "26162:26162"
     depends_on:
       - db
     container_name: web
@@ -20,6 +20,8 @@ services:
       MYSQL_ROOT_PASSWORD: root_password
     volumes_from:
       - mysql_data
+    ports:
+      - "6033:3306" #DB clientからの接続用
     container_name: db
 
   mysql_data:
