@@ -9,7 +9,7 @@
 1. docker-compose exec web rails db:create
 1. http://localhost:3000
 
-# Idea setting
+# IDEA setting
 1. Import Project
 1. File -> Project Structure
 1. Module -> Ruby SDK and Gems
