@@ -17,11 +17,15 @@ FROM ruby:2.3.2-alpine
 ENV LANG ja_JP.UTF-8
 COPY --from=builder /usr/local/bundle /usr/local/bundle
 
-RUN apk add --update \
+RUN apk --update add \
     bash \
     mysql-dev \
     nodejs \
-    tzdata
+    mariadb-dev \
+    tzdata \
+    && rm /usr/lib/libmysqld*
+
+RUN apk del openssl-dev mariadb-client-libs mariadb-common
 
 COPY scripts/start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
