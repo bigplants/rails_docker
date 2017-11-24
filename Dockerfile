@@ -28,6 +28,7 @@ RUN gem install bundler
 WORKDIR /tmp
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
+ENV BUNDLE_JOBS=4
 RUN bundle install
 
 ENV APP_HOME /myapp
