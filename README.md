@@ -13,5 +13,5 @@
 1. Import Project
 1. File -> Project Structure
 1. Module -> Ruby SDK and Gems
-1. + and `New remote`
+1. `+` and `New remote`
 1. Choose Docker
