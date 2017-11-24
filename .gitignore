@@ -19,3 +19,5 @@
 .byebug_history
 
 /mysql_data
+.idea
+*.iml
