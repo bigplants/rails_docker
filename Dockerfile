@@ -14,6 +14,10 @@ RUN apk del build-dependencies
 FROM ruby:2.3.2-alpine
 ENV LANG ja_JP.UTF-8
 COPY --from=builder /usr/local/bundle /usr/local/bundle
+WORKDIR /tmp
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+
 RUN apk --update add \
     bash \
     nodejs \
