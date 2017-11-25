@@ -2,25 +2,15 @@ FROM ruby:2.3.2-alpine
 
 ENV LANG ja_JP.UTF-8
 
-RUN apk update && \
-    apk upgrade && \
-    apk add --update\
-    bash \
+RUN apk --update add \
     build-base \
     curl-dev \
-    git \
-    libxml2-dev \
-    libxslt-dev \
     linux-headers \
-    mysql-dev \
+    bash \
     nodejs \
-    openssh \
-    ruby-dev \
-    ruby-json \
+    mariadb-dev \
     tzdata \
-    yaml \
-    yaml-dev \
-    zlib-dev
+    && rm /usr/lib/libmysqld*
 
 ##### Rails #####
 RUN gem install bundler
