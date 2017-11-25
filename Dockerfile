@@ -10,7 +10,7 @@ WORKDIR /tmp
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 ENV BUNDLE_JOBS=4
-RUN bundle install
+RUN bundle install --without test development
 RUN apk del build-dependencies
 
 FROM ruby:2.3.2-alpine
@@ -20,7 +20,7 @@ COPY --from=builder /usr/local/bundle /usr/local/bundle
 RUN apk --update add \
     bash \
     mysql-dev \
-    nodejs \
+#    nodejs \
     mariadb-dev \
     tzdata \
     && rm /usr/lib/libmysqld*
