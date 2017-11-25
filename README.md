@@ -1,32 +1,24 @@
-# Rails Docker
+# README
 
-# Requirements
-- docker
-- docker-compose
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# Get started
-1. docker-compose up --build
-1. docker-compose exec web rails db:create
-1. docker-compose exec web rails db:migrate
-1. http://localhost:3000
+Things you may want to cover:
 
-# IDEA setting
-1. Import Project
-1. File -> Project Structure
-1. Module -> Ruby SDK and Gems
-1. `+` and `New remote`
-1. Choose `Docker Compose`
-1. Platform Settings -> SDKs
-1. `+` and `Ruby SDK` and `New remote` -> `Docker Compose`
-1. Project Settings -> Project -> Project SDK -> Choose remote interpreter.
-1. Run/Debug Configurations
-1. `+` and `Rails`
-1. Check `Run browser` and `Start Javascript ...`
-1. In `Ruby SDK`, choose `Use other SDK` and docker-compose interpreter.
+* Ruby version
 
-## DB client setting
-- Host: `localhost`
-- Database: `myapp_development`
-- User: `root`
-- Password: `root_password`
-- Port: `6033`
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
