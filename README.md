@@ -6,9 +6,12 @@
 
 # Get started
 1. docker-compose up --build
-1. docker-compose exec web rails db:create
-1. docker-compose exec web rails db:migrate
 1. http://localhost:3000
+
+## Brief Explanation
+`docker-compose up` has the following task:
+- `docker-compose exec web rails db:create`
+- `docker-compose exec web rails db:migrate`
 
 # IDEA setting
 1. Import Project
