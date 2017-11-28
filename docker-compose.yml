@@ -1,16 +1,30 @@
 version: '2'
 services:
-  web:
+  web: &web_base
     build: .
     command: /usr/local/bin/start.sh
     volumes:
-      - .:/myapp
+      - .:/myapp:cached
     ports:
       - "3000:3000"
     depends_on:
       - db
     container_name: web
-
+    tty: true
+    stdin_open: true
+  spring:
+    <<: *web_base
+    command: spring server
+    ports: []
+#    tty: false
+#    stdin_open: false
+    pid: host
+    environment:
+      SPRING_SOCKET: /tmp/spring/spring.sock
+    volumes:
+      - .:/myapp:cached
+      - spring:/tmp/spring
+    container_name: spring
   db:
     image: mysql/mysql-server:5.7
     environment:
@@ -24,5 +38,7 @@ services:
   mysql_data:
     image: busybox
     volumes:
-      - ./mysql_data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql:delegated
     container_name: mysql_data
+volumes:
+  spring:
