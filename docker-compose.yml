@@ -16,10 +16,9 @@ services:
     <<: *web_base
     command: spring server
     ports: []
-#    tty: false
-#    stdin_open: false
     pid: host
     environment:
+      PATH: /myapp/bin:$PATH
       SPRING_SOCKET: /tmp/spring/spring.sock
     volumes:
       - .:/myapp:cached
