@@ -4,7 +4,7 @@ services:
     build: .
     command: /usr/local/bin/start.sh
     volumes:
-      - .:/myapp:cached
+      - "app-sync:/myapp:rw"
     ports:
       - "3000:3000"
     depends_on:
@@ -21,8 +21,8 @@ services:
       PATH: /myapp/bin:$PATH
       SPRING_SOCKET: /tmp/spring/spring.sock
     volumes:
-      - .:/myapp:cached
-      - spring:/tmp/spring
+      - "app-sync:/myapp:rw"
+      - "spring:/tmp/spring"
     container_name: spring
   db:
     image: mysql/mysql-server:5.7
@@ -37,7 +37,11 @@ services:
   mysql_data:
     image: busybox
     volumes:
-      - ./mysql_data:/var/lib/mysql:delegated
+      - "mysql-data-sync:/var/lib/mysql:rw"
     container_name: mysql_data
 volumes:
   spring:
+  app-sync:
+    external: true
+  mysql-data-sync:
+    external: true
