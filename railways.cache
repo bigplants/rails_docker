@@ -1,3 +1,8 @@
+Running via Spring preloader in process 26
+** Invoke routes (first_time)
+** Invoke environment (first_time)
+** Execute environment
+** Execute routes
    Prefix Verb   URI Pattern               Controller#Action
     users GET    /users(.:format)          users#index
           POST   /users(.:format)          users#create
