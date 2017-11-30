@@ -50,6 +50,7 @@ group :development, :test do
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
+  gem 'yard'
 end
 
 group :development do
