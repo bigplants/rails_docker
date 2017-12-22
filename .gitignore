@@ -18,11 +18,10 @@
 
 .byebug_history
 
-/mysql_data
+mysql_data/
 .idea
 *.iml
 
-spring/
 .docker-sync/
 railways.cache
 doc/
